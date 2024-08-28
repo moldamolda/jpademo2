@@ -2,6 +2,8 @@ package org.example;
 
 
 import jakarta.persistence.EntityManagerFactory;
+import org.example.entities.Course;
+import org.example.entities.Student;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -33,7 +35,8 @@ public class HibernateConfig {
     }
     // TODO: IMPORTANT: Add Entity classes here for them to be registered with Hibernate
     private static void getAnnotationConfiguration(Configuration configuration) {
-       // configuration.addAnnotatedClass(Boat.class);
+       configuration.addAnnotatedClass(Student.class);
+        configuration.addAnnotatedClass(Course.class);
 
     }
 
@@ -90,8 +93,8 @@ public class HibernateConfig {
     }
     private static Properties setDevProperties(Properties props){
         props.put("hibernate.connection.url", "jdbc:postgresql://localhost:5432/"+ "jpademo");
-        props.put("hibernate.connection.username", "dev");
-        props.put("hibernate.connection.password", "ax2");
+        props.put("hibernate.connection.username", "postgres");
+        props.put("hibernate.connection.password", "postgres");
         return props;
     }
     private static Properties setTestProperties(Properties props){
