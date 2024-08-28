@@ -1,5 +1,6 @@
 package org.example;
 
+
 import org.example.DAOs.CourseDAO;
 import org.example.DAOs.PersonDAO;
 import org.example.DAOs.StudentDAO;
@@ -263,6 +264,7 @@ public class Main {
         for (int i=0;i<studentList.size();i++){
             System.out.println(studentList.get(i).getName() +", "+studentList.get(i).getPhoneNumber()+" "+studentList.get(i).getEmail()+" "+studentList.get(i).getAddress()+" "+studentList.get(i).getAge()+" "+studentList.get(i).getDateOfBirth()+" "+studentList.get(i).getDateOfEnrollment());
         }
+
 
 
     }

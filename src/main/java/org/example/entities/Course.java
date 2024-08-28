@@ -3,6 +3,7 @@ package org.example.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+
 /**
  * Purpose:
  *
@@ -22,6 +23,7 @@ public class Course {
     private int id;
     private String name;
     private String teacher;
+
 
 
 }
