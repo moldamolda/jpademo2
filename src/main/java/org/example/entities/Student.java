@@ -4,35 +4,35 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.util.List;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
-@Entity
-@Table(name="students")
-@Builder
-public class Student {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+/**
+ * Purpose:
+ *
+ * @author: Jeppe Koch
+ */
+    @Getter
+    @Setter
+    @ToString
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Builder
+    @Entity
+    @Table(name = "student")
+    public class Student {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private int id;
+        private String name;
+        private int age;
+        @Column(name = "phone_number", unique = true)
+        private String phoneNumber;
+        @Column(name = "email", unique = true)
+        private String email;
+        private String address;
+        private String status;
+        private LocalDate dateOfBirth;
+        private LocalDate dateOfEnrollment;
 
-    @Column(name = "f_name", unique = true)
-    private String name;
 
-    private Integer phonenumber;
+    }
 
-    private String address;
-
-    private LocalDate dateOfEnrollment;
-
-
-
-
-
-
-
-
-}

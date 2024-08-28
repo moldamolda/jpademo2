@@ -3,6 +3,8 @@ package org.example;
 
 import jakarta.persistence.EntityManagerFactory;
 import org.example.entities.Course;
+
+import org.example.entities.Person;
 import org.example.entities.Student;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -35,6 +37,8 @@ public class HibernateConfig {
     }
     // TODO: IMPORTANT: Add Entity classes here for them to be registered with Hibernate
     private static void getAnnotationConfiguration(Configuration configuration) {
+
+        configuration.addAnnotatedClass(Person.class);
        configuration.addAnnotatedClass(Student.class);
         configuration.addAnnotatedClass(Course.class);
 
@@ -69,11 +73,7 @@ public class HibernateConfig {
     }
 
 
-   /* private static String getDBName() {
-        return Utils.getPropertyValue("db.name", "properties-from-pom.properties");
-    }
 
-    */
     private static Properties setBaseProperties(Properties props){
         props.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         props.put("hibernate.connection.driver_class", "org.postgresql.Driver");
